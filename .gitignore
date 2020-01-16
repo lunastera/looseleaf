@@ -1,0 +1,30 @@
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# base specific
+*.class
+*.log
+
+# sbt specific
+target/
+project/boot
+lib_managed/*
+project/build/target
+project/build/lib_managed
+project/build/src_managed
+project/plugins/lib_managed
+project/plugins/target
+project/plugins/src_managed
+project/plugins/project
+
+core/lib_managed
+core/target
+
+# metals specific
+.metals
+.bloop
+project/metals.sbt
