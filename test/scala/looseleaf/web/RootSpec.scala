@@ -2,7 +2,7 @@ package looseleaf
 
 import org.scalatra.test.scalatest._
 
-class RoutingTests extends ScalatraFunSuite {
+class RootSpec extends ScalatraFunSuite {
 
   addServlet(classOf[web.Router], "/*")
 
