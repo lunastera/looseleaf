@@ -1,8 +1,18 @@
 val ScalaVersion = "2.12.10"
 val ScalatraVersion = "2.7.0-RC1"
+val ScalacOptions = Seq(
+  "-duplication",
+  "-unchecked",
+  "-feature",
+  "-Xlint",
+  "-Ywarn-unused:-imports,-implicits",
+  "-language:implicitConversions",
+  "-language:higherKinds"
+)
 
 lazy val commonSettings = Seq(
-  scalaVersion := ScalaVersion
+  scalaVersion := ScalaVersion,
+  scalacOptions ++= ScalacOptions
 )
 
 lazy val directories = Seq(
