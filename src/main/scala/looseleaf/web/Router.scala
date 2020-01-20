@@ -1,5 +1,4 @@
 package looseleaf
 package web
 
-class Router extends Servlet
-  with Root
+class Router extends Servlet with Root
