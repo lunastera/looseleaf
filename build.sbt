@@ -1,7 +1,7 @@
 val ScalaVersion = "2.12.10"
 val ScalatraVersion = "2.7.0-RC1"
 val ScalacOptions = Seq(
-  "-duplication",
+  "-deprecation",
   "-unchecked",
   "-feature",
   "-Xlint",
