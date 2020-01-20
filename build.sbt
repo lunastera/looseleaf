@@ -31,6 +31,9 @@ lazy val looseleaf = (project in file(".")).
       "org.scalatra" %% "scalatra-scalatest" % ScalatraVersion % "test",
       "ch.qos.logback" % "logback-classic" % "1.2.3" % "runtime",
       "org.eclipse.jetty" % "jetty-webapp" % "9.4.19.v20190610" % "container",
-      "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided"
+      "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided",
+      "com.typesafe.slick" %% "slick" % "3.3.2",
+      "com.typesafe.slick" %% "slick-hikaricp" % "3.3.2",
+      "mysql" % "mysql-connector-java" % "5.1.47"
     )
   )
