@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: looseleaf_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: looseleaf
+    volumes:
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./db:/docker-entrypoint-initdb.d
+    command: 'mysqld'
+    ports:
+      - 3306:3306
