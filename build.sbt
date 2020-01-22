@@ -1,5 +1,6 @@
 val ScalaVersion = "2.12.10"
 val ScalatraVersion = "2.7.0-RC1"
+val CirceVersion = "0.12.3"
 val ScalacOptions = Seq(
   "-deprecation",
   "-unchecked",
@@ -19,6 +20,12 @@ lazy val directories = Seq(
   scalaSource in Test := (baseDirectory in Test).value / "test" / "scala"
 )
 
+val circeDependencies = Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % CirceVersion)
+
 lazy val looseleaf = (project in file(".")).
   enablePlugins(ScalatraPlugin).
   settings(commonSettings: _*).
@@ -35,5 +42,6 @@ lazy val looseleaf = (project in file(".")).
       "com.typesafe.slick" %% "slick" % "3.3.2",
       "com.typesafe.slick" %% "slick-hikaricp" % "3.3.2",
       "mysql" % "mysql-connector-java" % "5.1.47"
-    )
+    ),
+    libraryDependencies ++= circeDependencies
   )
