@@ -17,7 +17,8 @@ lazy val commonSettings = Seq(
 )
 
 lazy val directories = Seq(
-  scalaSource in Test := (baseDirectory in Test).value / "test" / "scala"
+  scalaSource in Test := (baseDirectory in Test).value / "test" / "scala",
+  sourceDirectory in webappPrepare := baseDirectory.value / "webapp"
 )
 
 val circeDependencies = Seq(
@@ -43,5 +44,6 @@ lazy val looseleaf = (project in file(".")).
       "com.typesafe.slick" %% "slick-hikaricp" % "3.3.2",
       "mysql" % "mysql-connector-java" % "5.1.47"
     ),
-    libraryDependencies ++= circeDependencies
+    libraryDependencies ++= circeDependencies,
+    unmanagedResourceDirectories in Compile += (sourceDirectory in webappPrepare).value
   )
